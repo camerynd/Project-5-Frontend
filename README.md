@@ -29,6 +29,7 @@ For this project, I want to build a web app containing multiple games. I am choo
     - user_id:integer
     - score:integer
  - Adventures: an adventure belongs_to a user
+    - user_id:integer
     - character_name:string
     - choice_1:boolean
     - choice_2:boolean
