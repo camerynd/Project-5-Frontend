@@ -37,7 +37,19 @@ For this project, I want to build a web app containing multiple games. I am choo
     - result:boolean
     
 ## Backend Routes
-  ### GET/user/pets: Returns all pets associated with logged in user
+  ### GET/users/:id : (I don't think this is how the route will look, I just don't know because I haven't learned auth yet) Takes input from login page, finds corresponding user, and logs them in. Will include the user's associated data.
+    {
+      id: 1,
+      username: "username321",
+      password: "password321"
+    }
+  ### POST/users: Creates a new user if the user does not already exist, validates that password is at least six characters long
+    {
+      username: "username123",
+      password: "password123"
+    }
+      
+  ### GET/pets: Returns all pets, current user's pets will be accessed through the current user on frontend (currentUser.pets)
     {
       id: 1,
       pet_type: "Dog",
@@ -51,7 +63,7 @@ For this project, I want to build a web app containing multiple games. I am choo
       pet_food: "Spaghetti",
       food_image: "(image url)"
     }
-  ### POST/pets: Posts all info needed for a pet from frontend input fields, validates all attributes are present, displays error on frontend if all forms have not been filled out
+  ### POST/pets: Creates a pet using all info needed for a pet from frontend input fields, validates all attributes are present, displays error on frontend if all forms have not been filled out
     {
       user_id: (current user's id),
       pet_type: "Dog",
@@ -65,12 +77,12 @@ For this project, I want to build a web app containing multiple games. I am choo
       pet_food: "Spaghetti",
       food_image: "(image url)"
     }
-  ### DELETE/pets#{id}: Deletes pet
+  ### DELETE/pets/:id : Deletes pet
     {
       id: 1
     }
   
-  ### GET/high_scores: Returns highest scores using custom rendering to render only the five highest scores out of all the high scores of all of the users
+  ### GET/scores: Renders highest scores using custom rendering methods to render only the five highest scores out of all the scores of all users
     {
       id: 1,
       user_id: 1,
@@ -102,34 +114,18 @@ For this project, I want to build a web app containing multiple games. I am choo
       score: 13
     }
     
-  ### GET/user/adventure_summaries: Returns a string using custom rendering and string interpolation that summarizes the current user's choices for each game
+  ### GET/adventures: Returns a string using a custom rendering method and string interpolation that summarizes the choices made for each game. The current user's adventures will be accessed through the current user on frontend (currentUser.adventures)
     {
       id: 3,
+      user_id: 2,
       summary: "You, (character_name corresponding w/ this adventure), chose to (some text corresponding with choice_1), which led to (some more text corresponding with choice_1). You then (some text corresponding with choice_2), which led to (some more text corresponding with choice_2). You then (some text corresponding with choice__3), which led to your (either win or loss, depending on result). You (either won or lost, depending on result)!"
     },
     {
       id: 4,
+      user_id: 6,
       summary: "You, (character_name corresponding w/ this adventure), chose to (some text corresponding with choice_1), which led to (some more text corresponding with choice_1). You then (some text corresponding with choice_2), which led to (some more text corresponding with choice_2). You then (some text corresponding with choice__3), which led to your (either win or loss, depending on result). You (either won or lost, depending on result)!"
     }
-  ### GET/user/adventures: Would return the attributes of each adventure belonging to the current user, not sure this one will be needed
-    {
-      id: 3,
-      user_id: (current user's id),
-      character_name: "Cameryn",
-      choice_1: true,
-      choice_2: false,
-      choice_3: false,
-      result: false
-    },
-    {
-      id: 4,
-      user_id: (current user's id),
-      character_name: "Dinner",
-      choice_1: true,
-      choice_2: false,
-      choice_3: false,
-      result: true
-    }
+
   ### POST/user/adventures: Post option will not be available until the end of the game play, after all forms have been filled out
     {
       user_id: (current user's id),
