@@ -1,6 +1,5 @@
 import {Route, Switch, NavLink, useRouteMatch } from "react-router-dom"
 import Game2Play from './Game2Play'
-import HighScores from './HighScores'
 
 export default function Game2() {
 

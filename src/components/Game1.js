@@ -1,6 +1,5 @@
 import {Route, Switch, NavLink, useRouteMatch } from "react-router-dom"
 import Game1Play from './Game1Play'
-import Pets from './Pets'
 
 export default function Game1() {
 
