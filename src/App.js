@@ -7,6 +7,10 @@ import YourStuff from "./components/YourStuff"
 import LoginPage from "./components/LoginPage"
 
 function App() {
+
+  const production  = 'https://phase-5-backend.herokuapp.com/';
+  const development = 'http://localhost:3000/';
+  const url = (process.env.NODE_ENV ? production : development);
   
   const [loggedIn, setLoggedIn] = useState(false)
   const [user, setUser] = useState()
@@ -14,7 +18,7 @@ function App() {
   useEffect(() => {
   const token = localStorage.getItem("jwt");
   console.log("token: " + token)
-  fetch("http://localhost:3000/api/v1/profile", {
+  fetch(`${url}/api/v1/profile`, {
     method: "GET",
     headers: {
     Authorization: `Bearer ${token}`,
@@ -34,7 +38,7 @@ function App() {
   
   function signup(username, password, bio, avatar) {
 
-    fetch("http://localhost:3000/api/v1/users", {
+    fetch(`${url}/api/v1/users`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -70,7 +74,7 @@ function App() {
   }
 
   function login(username, password) {
-    fetch("http://localhost:3000/api/v1/login", {
+    fetch(`${url}/api/v1/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
