@@ -1,7 +1,7 @@
 
 export default function Home({currentUser}) {
 
-    console.log(currentUser.user.username)
+    console.log(currentUser)
 
     function handleClick() {
 
@@ -13,9 +13,14 @@ export default function Home({currentUser}) {
             <div className="welcome">
             <h1>Welcome, Gamer!</h1>
             <div className="profile">
-                {/* <h2>{currentUser.user.username}</h2>
-                <img src={currentUser.user.avatar} alt="you"/>
-                <p>{currentUser.user.bio}</p> */}
+                {currentUser ? 
+                <>
+                <h2>{currentUser.username}</h2>
+                <img src={currentUser.avatar} alt="you"/>
+                <p>{currentUser.bio}</p> 
+                </> :
+                ''
+                }
                 <button onClick={handleClick}>Edit Profile</button>
             </div>
             </div>

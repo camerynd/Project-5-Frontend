@@ -18,6 +18,7 @@ function App() {
   useEffect(() => {
   const token = localStorage.getItem("jwt");
   console.log("token: " + token)
+  // console.log(user.user.username)
   fetch(`${url}/api/v1/profile`, {
     method: "GET",
     headers: {
@@ -25,9 +26,9 @@ function App() {
     },
   }).then((response) => {
     if (response.ok) {
-      response.json().then((user) => {
-        setUser(user)
+      response.json().then((data) => {
         setLoggedIn(true)
+        setUser(data.user)
       });
     } else {
       console.log("please log in")
@@ -37,7 +38,6 @@ function App() {
   
   
   function signup(username, password, bio, avatar) {
-
     fetch(`${url}/api/v1/users`, {
       method: "POST",
       headers: {
@@ -64,13 +64,6 @@ function App() {
         console.log("form incorrectly filled out")
       }
     })
-    // .then((r) => r.json())
-    // .then((data) => {
-    //   // save the token to localStorage for future access
-    //   localStorage.setItem("jwt", data.jwt);
-    //   // save the user somewhere (in state!) to log the user in
-    //   setUser(data.user);
-    // });
   }
 
   function login(username, password) {
@@ -98,17 +91,9 @@ function App() {
         console.log("wrong username/password")
       }
     })
-    // .then((r) => r.json())
-    // .then((data) => {
-    //   // save the token to localStorage for future access
-    //   localStorage.setItem("jwt", data.jwt);
-    //   setLoggedIn(true)
-    //   setUser(data.user);
-    //   // save the user somewhere (in state!) to log the user in
-    // });
   }
 
-  console.log(user)
+  // console.log("hi" + user.user.username)
 
   function logout() {
     localStorage.clear()
@@ -121,7 +106,7 @@ function App() {
       {loggedIn ?
       <Router>
         <nav className="navbar-container">
-          {/* <img src={user.user.avatar} alt="you"/> */}
+          {user ? <img src={user.avatar} alt="you"/> : ''}
           <Link className="links" to="/">Home</Link>
           <Link className="links" to="/play">Play</Link>
           <Link className="links" to="/your_stuff">Your Stuff</Link>
