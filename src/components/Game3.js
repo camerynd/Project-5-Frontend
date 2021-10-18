@@ -1,21 +1,20 @@
-import {Route, Switch, NavLink, useRouteMatch } from "react-router-dom"
+import {useState} from 'react'
 import Game3Play from './Game3Play'
 
 export default function Game3() {
 
-    const match = useRouteMatch();
+  const [gameActive, setGameActive] = useState(false)
+
+    function handleClick() {
+      setGameActive(!gameActive)
+    }
 
     return (
         <>
-        <p>instructionsinstructionsinstructionsinstructionsinstructionsinstructionsinstructionsinstructionsinstructionsinstructionsinstructionsinstructionsinstructionsinstructionsinstructionsinstructions</p>
-          <nav>
-            <NavLink className="links" to={`${match.url}/game3_play`}>Play</NavLink>
-          </nav>
-          <Switch>
-          <Route path={`${match.path}/game3_play`}>
-            <Game3Play/>
-          </Route>
-        </Switch>
+        <h1>Epic Quest</h1>
+        <p>Will you survive this epic quest? Respond to each prompt using your intuition and see how far you make it. (I bet you will die)</p>
+          <button onClick={handleClick}>Start/Stop</button>
+          {gameActive ? <Game3Play restart={handleClick}/> : ''}
         </>
     )
 

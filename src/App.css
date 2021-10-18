@@ -4,6 +4,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Tourney:ital,wght@1,600&display=swap');
 
+body {
+background-color: pink;
+}
+
 .App {
   text-align: center;
   /* font-family: 'Roboto', sans-serif; */
@@ -34,14 +38,15 @@
 }
 
 .welcome h1 {
-  font-size: 50px;
+  font-size: 40px;
 }
 .welcome h2 {
   font-size: 30px;
 }
 
 .welcome img {
-  max-width: 400px;
+  min-width: 400px;
+  max-height: 400px;
 }
 
 .container {
@@ -55,7 +60,7 @@
   right: 0px;
   top: 0px;
   position: absolute;
-  height: 100vh;
+  height: 102.5vh;
 }
 
 .link-div1 {
@@ -70,7 +75,7 @@
   padding: 10px;
   margin: 10px;
   width: 100px;
-  height: 50px;
+  height: 70px;
   background-color: rgb(124, 124, 226);
 }
 
@@ -83,6 +88,7 @@
 }
 
 .game {
+  overflow: auto;
   padding: 10px;
   height: 600px;
   width: 900px;
@@ -93,7 +99,12 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.game button {
+  margin: 30px;
+}
+
 .profile {
+  overflow: auto;
   word-wrap: break-word;
   margin: auto;
   padding: 10px;
@@ -118,16 +129,37 @@
 }
 
 .navbar-container img {
-  max-width: 125px;
-  margin: 50px 50px 30px 50px;
-  /* margin-left: 35px;
-  margin-right: 35px;
-  margin-bottom: 20px; */
+  width: 125px;
+  height: 125px;
+  margin: 50px 50px 30px 38px;
 }
 
-.links2 {
-  
+.lose {
+  font-size: 100px;
+  color: red;
 }
+
+.win {
+  font-size: 100px;
+  color: rgb(173, 218, 88);
+}
+
+.game3-img {
+  margin: auto;
+  display: block;
+  max-width: 600px;
+}
+
+.title {
+  font-size: 25px;
+  max-height: 80px;
+}
+
+.login button, input{
+  margin: 10px;
+}
+
+
 
 
 

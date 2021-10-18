@@ -19,7 +19,8 @@ function App() {
   const token = localStorage.getItem("jwt");
   console.log("token: " + token)
   // console.log(user.user.username)
-  fetch(`${url}/api/v1/profile`, {
+  // fetch(`${url}/api/v1/profile`, {
+    fetch(`http://localhost:3000/api/v1/profile`, {
     method: "GET",
     headers: {
     Authorization: `Bearer ${token}`,
@@ -38,7 +39,8 @@ function App() {
   
   
   function signup(username, password, bio, avatar) {
-    fetch(`${url}/api/v1/users`, {
+    // fetch(`${url}/api/v1/users`, {
+      fetch(`http://localhost:3000/api/v1/users`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -67,7 +69,8 @@ function App() {
   }
 
   function login(username, password) {
-    fetch(`${url}/api/v1/login`, {
+    // fetch(`${url}/api/v1/login`, {
+      fetch(`http://localhost:3000//api/v1/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -109,7 +112,7 @@ function App() {
           {user ? <img src={user.avatar} alt="you"/> : ''}
           <Link className="links" to="/">Home</Link>
           <Link className="links" to="/play">Play</Link>
-          <Link className="links" to="/your_stuff">Your Stuff</Link>
+          <Link className="links" to="/data">Data</Link>
           <button className="logout" onClick={logout}>Logout</button>
         </nav>
             <Route exact path="/">
@@ -118,8 +121,8 @@ function App() {
             <Route exact path="/play">
               <Play/>
             </Route>
-            <Route exact path="/your_stuff">
-              <YourStuff/>
+            <Route exact path="/data">
+              <YourStuff currentUser={user}/>
             </Route>
       </Router> :
       <LoginPage login={login} signup={signup}/>

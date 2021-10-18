@@ -19,7 +19,10 @@ export default function LoginPage({login, signup}) {
     }
 
     return (
-        <div className="Login">
+        <div className="login">
+            <div className="title">
+                <h1>DINNER'S ARCADE</h1>
+            </div>
             <form onSubmit={(e) => handleSubmitLogin(e)}>
             <input
                 placeholder="username"

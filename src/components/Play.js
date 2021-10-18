@@ -12,7 +12,6 @@ export default function Play() {
         </div> */} 
         <div className="container">
             <Router>
-                {/* <nav className="navbar"> */}
                 <div activeClassName="active-game" className="link-div1">
                     <Link className="links2" to="/game1">Game 1</Link>
                 </div>
