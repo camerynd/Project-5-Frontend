@@ -1,6 +1,10 @@
+import {useSelector} from 'react-redux'
 import image from './Images/Choice4-image.JPG';
 
-export default function Continuation4({character, fourthChoice}) {
+export default function Continuation4({fourthChoice}) {
+
+    const character = useSelector(s => s.character)
+
 
     function handleClickYes() {
         fourthChoice("The mud sucked you into an underground cavern, and Ninja Assassin dove in after you. In the cavern you met a mermaid named Stacy, bathed, then discover a secret tunnel and ventured in. ", true)

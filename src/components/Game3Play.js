@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
 import CharacterName from './Game3Components/CharacterName'
 import Continuation1 from './Game3Components/Continuation1'
 import Continuation2 from './Game3Components/Continuation2'
@@ -14,7 +15,9 @@ import Win from './Game3Components/Win'
 
 export default function Game3Play({restart}) {
 
-    const [character, setCharacter] = useState('')
+    const dispatch = useDispatch()
+    // const [character, setCharacter] = useState('')
+    const character = useSelector(s => s.character)
     const [ternaryBegin, setTernaryBegin] = useState(true)
 
     const [choice1, setChoice1] = useState('')
@@ -40,7 +43,8 @@ export default function Game3Play({restart}) {
     const [winLoss, setWinLoss] = useState(true)
 
     function setName(name) {
-        setCharacter(name)
+        dispatch({type: "SETCHARACTER", payload: name})
+        // setCharacter(name)
         setTernaryBegin(false)
     }
 
@@ -90,19 +94,19 @@ export default function Game3Play({restart}) {
                 {ternaryBegin ? 
                 <CharacterName setName={setName}/> :
                     ternary1 ? 
-                    <Continuation1 firstChoice={firstChoice} character={character}/> :
+                    <Continuation1 firstChoice={firstChoice} /> :
                     continueFail1 ? 
                         ternary2 ?
-                        <Continuation2 secondChoice={secondChoice} character={character}/> :
+                        <Continuation2 secondChoice={secondChoice} /> :
                         continueFail2 ?
                             ternary3 ?
-                            <Continuation3 thirdChoice={thirdChoice} character={character}/> :
+                            <Continuation3 thirdChoice={thirdChoice} /> :
                             continueFail3 ?
                                 ternary4 ? 
-                                <Continuation4 fourthChoice={fourthChoice} character={character}/> :
+                                <Continuation4 fourthChoice={fourthChoice} /> :
                                 continueFail4 ?
                                     ternary5 ?
-                                    <Continuation5 fifthChoice={fifthChoice} character={character}/> :
+                                    <Continuation5 fifthChoice={fifthChoice} /> :
                                     continueFail5 ?
                                         <Win handleSubmit={handleSubmit}/> 
                                     : <Fail5 handleSubmit={handleSubmit}/> 

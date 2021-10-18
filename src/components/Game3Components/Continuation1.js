@@ -1,7 +1,9 @@
-
+import {useSelector} from 'react-redux'
 import image from './Images/Choice1-image.JPG';
 
-export default function Continuation1({character, firstChoice}) {
+export default function Continuation1({firstChoice}) {
+
+    const character = useSelector(s => s.character)
 
     function handleClickYes() {
         firstChoice(", one day King Dinner asked you to be the hero of Dinnerton and you accepted. ", true)
