@@ -13,10 +13,10 @@ import Fail4 from './Game3Components/Fail4'
 import Fail5 from './Game3Components/Fail5'
 import Win from './Game3Components/Win'
 
-export default function Game3Play({restart}) {
+export default function Game3Play({currentUser, restart}) {
 
     const dispatch = useDispatch()
-    // const [character, setCharacter] = useState('')
+
     const character = useSelector(s => s.character)
     const [ternaryBegin, setTernaryBegin] = useState(true)
 
@@ -84,7 +84,31 @@ export default function Game3Play({restart}) {
     }
 
     function handleSubmit(lastWords) {
-        console.log("You were a peasant by the name of " + character + choice1 + choice2 + choice3 + choice4 + choice5 + (winLoss ? ' ADVENTURE STATUS: ' + 'Success!' : 'Your last words were ' + '\"' + lastWords + '\".' + ' ADVENTURE STATUS: ' + 'Failure'))
+
+        fetch(`http://localhost:3000/adventures`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify({
+                user_id: `${currentUser.id}`,
+                character_name: `${character}`,
+                choice_1: `${choice1}`,
+                choice_2: `${choice2}`,
+                choice_3: `${choice3}`,
+                choice_4: `${choice4}`,
+                choice_5: `${choice5}`,
+                adventure_status: `${winLoss}`,
+                last_words: `${lastWords}`
+            }),
+          })
+          .then((response) => response.json())
+          .then((data) => {
+            //   const newData = [...currentUser.adventures, data]
+              currentUser.adventures = [...currentUser.adventures, data]
+            })
+
         restart()
     }
 

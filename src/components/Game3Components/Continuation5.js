@@ -1,9 +1,9 @@
-import {useSelector} from 'react-redux'
+// import {useSelector} from 'react-redux'
 import image from './Images/Choice5-image.JPG';
 
 export default function Continuation5({fifthChoice}) {
 
-    const character = useSelector(s => s.character)
+    // const character = useSelector(s => s.character)
 
     function handleClickYes() {
         fifthChoice("After days of walking through the tunnel, you and Ninja Assassin were captured by the evil wizard. You took some gold bombs from the cave you were in and used them to explode the wizard, then you and Ninja Assassin returned to the kingdom of Dinnerton as heroes! ", true)

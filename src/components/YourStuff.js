@@ -9,19 +9,25 @@ export default function YourStuff({currentUser}) {
         <>
         <div className="container">
             <Router>
-                <div activeClassName="active-game" className="link-div1">
+                <div className="link-div1">
                     <Link className="links2" to="/pets">Your Pets</Link>
                 </div>
-                <div activeClassName="active-game" className="link-div2">
+                <div className="link-div2">
                     <Link className="links2" to="/high_scores">Number Cruncher High Scores</Link>
+                </div>
+                <div className="link-div2">
+                    <Link className="links2" to="/data/adventures">Saved Adventures</Link>
                 </div>
                 <div className="game">
                 <Switch>
                     <Route path="/pets">
-                        <Pets pets={currentUser.pets}/>
+                        <Pets currentUser={currentUser}/>
                     </Route>
                     <Route path="/high_scores">
                         <HighScores currentUser={currentUser}/>
+                    </Route>
+                    <Route path="/data/adventures">
+                        <Adventures currentUser={currentUser}/>
                     </Route>
                 </Switch>
                 </div>

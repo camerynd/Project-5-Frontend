@@ -8,9 +8,9 @@ import LoginPage from "./components/LoginPage"
 
 function App() {
 
-  const production  = 'https://phase-5-backend.herokuapp.com/';
-  const development = 'http://localhost:3000/';
-  const url = (process.env.NODE_ENV ? production : development);
+  // const production  = 'https://phase-5-backend.herokuapp.com/';
+  // const development = 'http://localhost:3000/';
+  // const url = (process.env.NODE_ENV ? production : development);
   
   const [loggedIn, setLoggedIn] = useState(false)
   const [user, setUser] = useState()
@@ -119,7 +119,7 @@ function App() {
               <Home currentUser={user}/>
             </Route>
             <Route exact path="/play">
-              <Play/>
+              <Play currentUser={user}/>
             </Route>
             <Route exact path="/data">
               <YourStuff currentUser={user}/>

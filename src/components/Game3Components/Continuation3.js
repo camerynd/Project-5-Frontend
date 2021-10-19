@@ -1,9 +1,9 @@
-import {useSelector} from 'react-redux'
+// import {useSelector} from 'react-redux'
 import image from './Images/Choice3-image.JPG';
 
 export default function Continuation3({thirdChoice}) {
 
-    const character = useSelector(s => s.character)
+    // const character = useSelector(s => s.character)
 
     function handleClickYes() {
         thirdChoice("You and the Nija Assassin became BFFs and continued on the journey together. Shortly after, you got your foot stuck in a mud vortex and rather than resisting, decided to let the mud take you. ", true)

@@ -6,11 +6,11 @@ export default function Continuation1({firstChoice}) {
     const character = useSelector(s => s.character)
 
     function handleClickYes() {
-        firstChoice(", one day King Dinner asked you to be the hero of Dinnerton and you accepted. ", true)
+        firstChoice("King Dinner asked you to be the hero of Dinnerton and you accepted. ", true)
     }
 
     function handleClickNo() {
-        firstChoice(", one day King Dinner asked you to be the hero of Dinnerton and you declined, so he stabbed you. ", false)
+        firstChoice("King Dinner asked you to be the hero of Dinnerton and you declined, so he stabbed you. ", false)
     }
 
     return (
