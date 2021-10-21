@@ -2,10 +2,12 @@ import {useState} from 'react'
 
 export default function Game1Play({currentUser, restart}) {
 
+    const [submittedText, setSubmittedText] = useState(false)
+
     const [petName, setPetName] = useState('')
 
     const [pet, setPet] = useState('')
-    const [petClass, setPetClass] = useState('')
+    const [petClass, setPetClass] = useState('tiger')
     const [petComment, setPetComment] = useState('')
 
     const [accessory1, setAccessory1] = useState('')
@@ -83,20 +85,52 @@ export default function Game1Play({currentUser, restart}) {
     }
 
     function handleClick() {
+        fetch(`http://localhost:3000/pets`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify({
+                pet_class: `${petClass}`,
+                pet_image: `${pet}`,
+                pet_name: `${petName}`,
+                pet_message: `${petComment}`,
+                user_id: `${currentUser.id}`,
+                accessory_1: `${accessory1}`,
+                accessory_2: `${accessory2}`,
+                accessory_3: `${accessory3}`,
+                accessory_4: `${accessory4}`
+            }),
+          })
+          .then((response) => response.json())
+          .then((data) => {
+              console.log(data)
+              currentUser.pets = [...currentUser.pets, data]
+            })
 
+            setPetClass('')
+            setPet('')
+            setPetName('')
+            setPetComment('')
+            setAccessory1('')
+            setAccessory2('')
+            setAccessory3('')
+            setAccessory4('')
+            setSubmittedText(true)
     }
 
     return (
         <>
         <div className="game1-play">
-        <label for="name">What's their name?</label>
+        <label htmlFor="name">What's their name?</label>
         <input
                 placeholder="Your Pet's Name..."
                 type="text"
                 value={petName}
                 onChange={(e) => setPetName(e.target.value)}
         />
-        <label for="comment">A comment from your pet?...</label>
+        <label htmlFor="comment">A comment from your pet?...</label>
         <input
                 max-length="50"
                 placeholder="Comment..."
@@ -134,6 +168,7 @@ export default function Game1Play({currentUser, restart}) {
             <p>"{petComment}" <br/> -{petName}</p>
         </div>
         <button onClick={handleClick}>Adopt!</button>
+        {submittedText ? <h2>There are new pets ready to view in Data/Your Pets!</h2> : ''}
         </>
     )
 

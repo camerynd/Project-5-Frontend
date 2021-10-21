@@ -1,9 +1,9 @@
 import AdventureSummaries from './AdventureSummaries'
 import {useState, useEffect} from 'react'
-export default function Adventures({currentUser}) {
+export default function Adventures() {
 
     const [adventures, setAdventures] = useState([])
-    const [user, setUser] = useState({})
+    // const [user, setUser] = useState({})
 
     useEffect(() => {
         const token = localStorage.getItem("jwt");
@@ -15,7 +15,7 @@ export default function Adventures({currentUser}) {
         }).then((response) => {
           if (response.ok) {
             response.json().then((data) => {
-              setUser(data.user)
+            //   setUser(data.user)
               setAdventures(data.user.adventures)
             });
           } else {

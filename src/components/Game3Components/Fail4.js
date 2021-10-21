@@ -18,7 +18,7 @@ export default function Fail4({handleSubmit}) {
             talking about-", but before he can finish, you trip and fall back into the pool of water and drown.</h2>
             <img className="game3-img" src={image} alt="you drowning"/>
             <div className="lose">FATALITY</div>
-            <label for="last words">Any last words?...</label>
+            <label htmlFor="last words">Any last words?...</label>
             <input
                 type="text"
                 value={lastWords}

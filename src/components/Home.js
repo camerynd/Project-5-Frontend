@@ -11,7 +11,7 @@ export default function Home({currentUser}) {
         <>
         <div className="container1">
             <div className="welcome">
-                <h1>Welcome, Gamer!</h1>
+                <h1 className="glow">Welcome, Gamer!</h1>
             <div className="profile">
                 {currentUser ? 
                 <>

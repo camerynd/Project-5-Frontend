@@ -28,7 +28,7 @@ body {
 }
 
 .links {
-  box-shadow: 1px 1px 2px rgb(187, 63, 115), 0 0 1em rgb(168, 5, 100), 0 0 0.2em rgb(143, 0, 19);
+  box-shadow: 1px 1px 2px rgb(187, 63, 115), 0 0 1em rgb(255, 4, 150), 0 0 0.2em rgb(143, 0, 19);
   margin: 40px;
   background-color: rgb(214, 214, 214);
   padding: 10px;
@@ -49,28 +49,56 @@ body {
   padding: 20px;
 }
 
+.glow {
+  /* font-size: 80px; */
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgb(187, 63, 115), 0 0 20px rgb(255, 0, 98), 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px rgb(187, 63, 115), 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgb(187, 63, 115), 0 0 20px rgb(255, 0, 98), 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px rgb(187, 63, 115), 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
 .welcome {
   width: 700px;
   
-  text-shadow: 1px 1px 2px rgb(187, 63, 115), 0 0 1em rgb(168, 5, 100), 0 0 0.2em rgb(143, 0, 19);
-}
+  /* text-shadow: 1px 1px 2px rgb(255, 0, 149), 0 0 1em rgb(255, 0, 179), 0 0 0.2em rgb(255, 0, 149); */
+} 
 
 .welcome button {
-  box-shadow: 1px 1px 2px rgb(187, 63, 115), 0 0 1em rgb(168, 5, 100), 0 0 0.2em rgb(143, 0, 19);
+  box-shadow: 1px 1px 2px rgb(187, 63, 115), 0 0 1em rgb(255, 4, 150), 0 0 0.2em rgb(143, 0, 19);
 }
 
 .welcome h1 {
   font-size: 50px;
-  color: pink;
+  color: rgb(250, 195, 218);
   
 }
 .welcome h2 {
+  
   font-size: 30px;
 }
 
 .welcome img {
-  box-shadow: 1px 1px 2px rgb(187, 63, 115), 0 0 1em rgb(168, 5, 100), 0 0 0.2em rgb(143, 0, 19);
-  /* box-shadow: 1px 1px 2px rgb(187, 63, 115), 0 0 1em rgb(255, 4, 150), 0 0 0.2em rgb(143, 0, 19); */
+  /* box-shadow: 1px 1px 2px rgb(187, 63, 115), 0 0 1em rgb(168, 5, 100), 0 0 0.2em rgb(143, 0, 19); */
+  box-shadow: 1px 1px 2px rgb(187, 63, 115), 0 0 1em rgb(255, 4, 150), 0 0 0.2em rgb(143, 0, 19);
   border-radius: 25px;
   width: 400px;
   height: 400px;
@@ -182,7 +210,7 @@ body {
   border-radius: 25px;
   word-wrap: break-word;
   color: rgb(173, 218, 88);
-  background-color: rgb(27, 26, 26);
+  background-color: rgb(0, 0, 0);
   border: 15px solid rgb(146, 145, 145);
   box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
@@ -199,6 +227,7 @@ body {
   margin: auto;
   padding: 10px;
   padding-bottom: 40px;
+  text-shadow: 1px 1px 10px rgb(196, 16, 121), 0 0 1em rgb(253, 2, 178), 0 0 0.2em rgb(255, 0, 149);
   /* height: 600px; */
   color: pink;
   width: 600px;
@@ -228,7 +257,7 @@ body {
 .navbar-container img {
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
   width: 125px;
-  box-shadow: 1px 1px 2px rgb(187, 63, 115), 0 0 1em rgb(168, 5, 100), 0 0 0.2em rgb(143, 0, 19);
+  box-shadow: 1px 1px 2px rgb(187, 63, 115), 0 0 1em rgb(255, 4, 150), 0 0 0.2em rgb(143, 0, 19);
   height: 125px;
   margin: 50px 50px 30px 38px;
   border-radius: 100px;
@@ -325,6 +354,17 @@ input {
   max-height: 450px;
   overflow: auto;
 }
+
+.adopted-pet {
+  /* background-color: pink; */
+  margin: auto;
+  position: relative;
+  height: 490px;
+  width: 550px;
+  /* box-shadow: 0 10px 20px rgba(0, 0, 0, .7); */
+  /* border: 5px solid white; */
+}
+
 /* ****************************************************************** */
 .tiger {
   width: 220px;
@@ -457,6 +497,7 @@ input {
 }
 
 .adventure-screen {
+  background-color: rgb(25, 25, 25);
   color: rgb(161, 161, 161) !important;
   font-family: 'Forum', cursive;
 }
@@ -477,5 +518,49 @@ input {
 
 .arcade-screen {
   font-family: 'Press Start 2P', cursive;
+  color: rgb(34, 33, 33) !important;
+  background-color: rgb(76, 168, 71);
 }
 
+/* //////////////////////////GAME 2////////////////////////////////////////////////////// */
+
+.game2-play-screen {
+  width: 500px; 
+  height: 200px;
+  border: 1px solid black;
+  margin: auto;
+}
+
+.character {
+  width: 20px;
+  height: 50px;
+  background-color: red;
+  position: relative;
+  top: 150px;
+}
+
+.block {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  position: relative;
+  top: 130px;
+  left: 480px;
+  animation: block 1s infinite;
+}
+
+.animate {
+  animation: jump 500ms;
+}
+
+@keyframes block {
+  0%{left:480px;}
+  100%{left:0px;}
+}
+
+@keyframes jump {
+  0%{top:150px;}
+  30%{top: 100px;}
+  70%{top: 100px;}
+  100%{top: 150px;}
+}

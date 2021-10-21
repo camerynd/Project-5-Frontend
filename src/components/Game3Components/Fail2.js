@@ -18,7 +18,7 @@ export default function Fail2({handleSubmit}) {
             so hard you die.</h2>
             <img className="game3-img" src={image} alt="u puke dead"/>
             <div className="lose">FATALITY</div>
-            <label for="last words">Any last words?...</label>
+            <label htmlFor="last words">Any last words?...</label>
             <input
                 type="text"
                 value={lastWords}

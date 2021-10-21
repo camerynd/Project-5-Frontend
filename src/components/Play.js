@@ -29,13 +29,13 @@ export default function Play({currentUser}) {
         <div className={`container2 ${activeGame}`}>
             <Router>
                 <div className="link-div">
-                    <Link className="links2" to="/play/game1">Game 1</Link>
+                    <Link className="links2" to="/play/game1">Special Pet</Link>
                 </div>
                 <div className="link-div">
                     <Link className="links2" to="/play/game2">Game 2</Link>
                 </div>
                 <div className="link-div">
-                    <Link className="links2" to="/play/game3">Game 3</Link>
+                    <Link className="links2" to="/play/game3">Epic Quest</Link>
                 </div>
                 <div className={`game ${activeGameScreen}`}>
                 <Switch>

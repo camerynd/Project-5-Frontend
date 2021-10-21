@@ -17,7 +17,7 @@ export default function Fail3({handleSubmit}) {
             leg is ripped from your body and you die.</h2>
             <img className="game3-img" src={image} alt="foot"/>
             <div className="lose">FATALITY</div>
-            <label for="last words">Any last words?...</label>
+            <label htmlFor="last words">Any last words?...</label>
             <input
                 type="text"
                 value={lastWords}

@@ -18,7 +18,7 @@ export default function Fail5({handleSubmit}) {
                 powerful that he swallows the entire world and you die.</h2>
                 <img className="game3-img" src={image} alt="dragon eating earth"/>
             <div className="lose">FATALITY</div>
-            <label for="last words">Any last words?...</label>
+            <label htmlFor="last words">Any last words?...</label>
             <input
                 type="text"
                 value={lastWords}

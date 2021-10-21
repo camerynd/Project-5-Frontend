@@ -1,26 +1,24 @@
-import {Route, Switch, NavLink, useRouteMatch } from "react-router-dom"
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 import Game2Play from './Game2Play'
 
 export default function Game2({setTheme}) {
+
+  const [gameActive, setGameActive] = useState(false)
 
   useEffect(() => {
     setTheme()
   }, []);
 
-    const match = useRouteMatch();
+  function handleClick() {
+    setGameActive(!gameActive)
+  }
 
     return (
         <>
-        <p>instructionsinstructionsinstructionsinstructionsinstructionsinstructionsinstructionsinstructionsinstructionsinstructionsinstructionsinstructionsinstructionsinstructionsinstructionsinstructions</p>
-          <nav>
-            <NavLink className="links" to={`${match.url}/game2_play`}>Play</NavLink>
-          </nav>
-          <Switch>
-          <Route path={`${match.path}/game2_play`}>
-            <Game2Play/>
-          </Route>
-        </Switch>
+        <h1>Game 2</h1>
+        <p>instructions blablablablabla</p>
+        <button onClick={handleClick}>Start/Stop</button>
+        {gameActive ? <Game2Play restart={handleClick}/> : ''}
         </>
     )
 

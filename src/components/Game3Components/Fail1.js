@@ -17,7 +17,7 @@ export default function Fail1({handleSubmit}) {
             to nurse you back to health, and you die of a staph infection a week later.</h2>
             <img className="game3-img" src={image} alt="king din stab"/>
             <div className="lose">FATALITY</div>
-            <label for="last words">Any last words?...</label>
+            <label htmlFor="last words">Any last words?...</label>
             <input
                 type="text"
                 value={lastWords}
