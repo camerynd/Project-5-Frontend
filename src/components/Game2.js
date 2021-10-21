@@ -1,7 +1,12 @@
 import {Route, Switch, NavLink, useRouteMatch } from "react-router-dom"
+import {useEffect} from 'react'
 import Game2Play from './Game2Play'
 
-export default function Game2() {
+export default function Game2({setTheme}) {
+
+  useEffect(() => {
+    setTheme()
+  }, []);
 
     const match = useRouteMatch();
 

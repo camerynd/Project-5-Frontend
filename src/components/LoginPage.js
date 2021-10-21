@@ -66,6 +66,7 @@ export default function LoginPage({login, signup}) {
             />
             <button type="submit">Signup</button>
             </form>
+            <img src="http://33.media.tumblr.com/f02aed641beb7a5059d57484c7f80f8c/tumblr_nlmmguXypN1tv87ujo1_400.gif" alt="cute cat"/>
         </div>
     )
 

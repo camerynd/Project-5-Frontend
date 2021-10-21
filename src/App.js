@@ -118,10 +118,10 @@ function App() {
             <Route exact path="/">
               <Home currentUser={user}/>
             </Route>
-            <Route exact path="/play">
+            <Route path="/play">
               <Play currentUser={user}/>
             </Route>
-            <Route exact path="/data">
+            <Route path="/data">
               <YourStuff currentUser={user}/>
             </Route>
       </Router> :

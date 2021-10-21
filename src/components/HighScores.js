@@ -4,22 +4,61 @@ export default function HighScores({currentUser}) {
 
     const [highScores, setHighScores] = useState([])
     const [isHighRankingPlayer, setIsHighRankingPlayer] = useState(false)
+    const [user, setUser] = useState({})
 
     useEffect(() => {
-          fetch(`http://localhost:3000/high_scores`)
-          .then((r) => r.json())
-          .then((data) => {
-              setHighScores(data)
-              data.forEach((item) => 
-                item.user.id === currentUser.id ?
-                setIsHighRankingPlayer(true) :
-                '' )
+        const token = localStorage.getItem("jwt");
+          fetch(`http://localhost:3000/api/v1/profile`, {
+          method: "GET",
+          headers: {
+          Authorization: `Bearer ${token}`,
+          },
+        }).then((response) => {
+          if (response.ok) {
+            response.json().then((data) => {
+              setData(data.user)
+              setUser(data.user)
+              data.user.scores.sort((a, b) => {
+                return a.score - b.score;
+            });
+            data.user.scores.reverse()
+            });
+          } else {
+            console.log("please log in")
+          }
         });
-        currentUser.scores.sort((a, b) => {
-            return a.score - b.score;
-        });
-        currentUser.scores.reverse()
-    }, []);
+
+        // fetch(`http://localhost:3000/high_scores`)
+        // .then((r) => r.json())
+        // .then((stuff) => {
+        //     setHighScores(stuff)
+        //     stuff.forEach((item) => 
+        //       item.user.id === user.id ?
+        //       setIsHighRankingPlayer(true) :
+        //       '' ) 
+        // });
+        }, []);
+
+        function setData(user) {
+            fetch(`http://localhost:3000/high_scores`)
+            .then((r) => r.json())
+            .then((stuff) => {
+                setHighScores(stuff)
+                stuff.forEach((item) => 
+                  item.user.id === user.id ?
+                  setIsHighRankingPlayer(true) :
+                  '' ) 
+            });
+        }
+
+
+    // useEffect(() => {
+        // currentUser.scores.sort((a, b) => {
+        //     return a.score - b.score;
+        // });
+        // currentUser.scores.reverse()
+       
+    // }, []);
 
     console.log(currentUser)
         
@@ -34,7 +73,7 @@ export default function HighScores({currentUser}) {
             <h1>Looks like you're not one of our top players, which is probably embarassing for you. You should really keep practicing :/</h1>
             }
             <h2>Your top scores:</h2>
-            {currentUser.scores.slice(0, 5).map(item => <h2>score: {item.score}</h2>)}
+            {user.scores ? user.scores.length > 0 ? user.scores.slice(0, 5).map(item => <h2>score: {item.score}</h2>) : <h2>No scores to display</h2> : ''}
         </>
     )
 

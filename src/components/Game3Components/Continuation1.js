@@ -27,7 +27,7 @@ export default function Continuation1({firstChoice}) {
             depressing life. An evil wizard threatens our kindom, and I need a brave adventurer to journey to his 
             tower and freaking take. him. down. Will you be our hero?"
             </h2>
-            <img className="game3-img" src={image} alt="king din"/>
+                <img className="game3-img" src={image} alt="king din"/>
             <button onClick={handleClickYes}>Hell ya</button> <button onClick={handleClickNo}>Hell no</button>
             <p>Click Start/Stop to start over</p>
         </>

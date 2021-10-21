@@ -1,7 +1,11 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import Game3Play from './Game3Play'
 
-export default function Game3({currentUser}) {
+export default function Game3({currentUser, setTheme}) {
+
+  useEffect(() => {
+    setTheme()
+  }, []);
 
   const [gameActive, setGameActive] = useState(false)
 

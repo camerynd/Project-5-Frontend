@@ -9,7 +9,7 @@ export default function Home({currentUser}) {
 
     return (
         <>
-        <div className="container">
+        <div className="container1">
             <div className="welcome">
                 <h1>Welcome, Gamer!</h1>
             <div className="profile">

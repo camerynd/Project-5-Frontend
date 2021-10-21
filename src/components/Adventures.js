@@ -1,5 +1,33 @@
 import AdventureSummaries from './AdventureSummaries'
+import {useState, useEffect} from 'react'
 export default function Adventures({currentUser}) {
+
+    const [adventures, setAdventures] = useState([])
+    const [user, setUser] = useState({})
+
+    useEffect(() => {
+        const token = localStorage.getItem("jwt");
+          fetch(`http://localhost:3000/api/v1/profile`, {
+          method: "GET",
+          headers: {
+          Authorization: `Bearer ${token}`,
+          },
+        }).then((response) => {
+          if (response.ok) {
+            response.json().then((data) => {
+              setUser(data.user)
+              setAdventures(data.user.adventures)
+            });
+          } else {
+            console.log("please log in")
+          }
+        });
+        }, []);
+
+
+//     useEffect(() => {
+//         return (currentUser ? setAdventures(currentUser.adventures) : '')
+//   }, []);
 
     function deleteSummary(id) {
         
@@ -8,8 +36,8 @@ export default function Adventures({currentUser}) {
         }).then((r) => {
         if (r.ok) {
             console.log("deleted")
-            const update = currentUser.adventures.filter((adv) => adv.id !== id)
-            currentUser.adventures = update
+            setAdventures((advs) =>
+            advs.filter((adv) => adv.id !== id));
             }
         });
        
@@ -18,16 +46,10 @@ export default function Adventures({currentUser}) {
     return (
         <>
             <h1>Saved Adventures:</h1>
-            {currentUser.adventures.length > 0 ? 
-            currentUser.adventures.map((adv) => <AdventureSummaries key={adv.id} adventure={adv} deleteSummary={deleteSummary}/>)
+            {adventures.length > 0 ? 
+            adventures.map((adv) => <AdventureSummaries key={adv.id} adventure={adv} deleteSummary={deleteSummary}/>)
             : <h2>You haven't saved any adventures yet!</h2>}
         </>
     )
 
 }
-
-// currentUser.adventures.map(adv => 
-//     <div className="adventure-summary">
-//         <h2>{adv.adventure_summary}</h2>
-//         <button onClick={deletePage(adv.id)}>Delete Summary</button>
-//     </div>)
