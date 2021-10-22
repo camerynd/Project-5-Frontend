@@ -537,9 +537,10 @@ input {
   background-color: red;
   position: relative;
   top: 150px;
+  left: 100px;
 }
 
-.block {
+.block1 {
   width: 20px;
   height: 20px;
   background-color: black;
@@ -547,6 +548,16 @@ input {
   top: 130px;
   left: 480px;
   animation: block 1s infinite;
+}
+
+.block2 {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  position: relative;
+  top: 110px;
+  left: 480px;
+  animation: block 3s infinite;
 }
 
 .animate {
