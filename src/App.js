@@ -113,7 +113,7 @@ function App() {
   return (
     <div className="App">
       {loggedIn ?
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <nav className="navbar-container">
           {user ? <img src={user.avatar} alt="you"/> : ''}
           <Link className="links" to="/">Home</Link>
