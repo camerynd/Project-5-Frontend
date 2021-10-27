@@ -1,13 +1,13 @@
 import DisplayPet from './DisplayPet'
 import {useState, useEffect} from 'react'
 
-export default function Pets() {
+export default function Pets({url}) {
 
     const [pets, setPets] = useState('')
 
     useEffect(() => {
         const token = localStorage.getItem("jwt");
-          fetch(`http://localhost:3000/api/v1/profile`, {
+          fetch(`${url}/api/v1/profile`, {
           method: "GET",
           headers: {
           Authorization: `Bearer ${token}`,
@@ -25,7 +25,7 @@ export default function Pets() {
 
     function deletePet(id) {
 
-        fetch(`http://localhost:3000/pets/${id}`, {
+        fetch(`${url}/pets/${id}`, {
             method: "DELETE",
             }).then((r) => {
             if (r.ok) {

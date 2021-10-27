@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react'
 import Game2Play from './Game2Play'
 import Score from './Score'
 
-export default function Game2({setTheme, currentUser}) {
+export default function Game2({setTheme, currentUser, url}) {
 
   const [gameActive, setGameActive] = useState(false)
   const [score, setScore] = useState(0)
@@ -39,7 +39,7 @@ export default function Game2({setTheme, currentUser}) {
     setGameActive(false)
     setLossMessage(true)
 
-      fetch(`http://localhost:3000/scores`, {
+      fetch(`${url}/scores`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

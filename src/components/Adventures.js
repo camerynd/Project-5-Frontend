@@ -1,13 +1,13 @@
 import AdventureSummaries from './AdventureSummaries'
 import {useState, useEffect} from 'react'
-export default function Adventures() {
+export default function Adventures({url}) {
 
     const [adventures, setAdventures] = useState([])
     // const [user, setUser] = useState({})
 
     useEffect(() => {
         const token = localStorage.getItem("jwt");
-          fetch(`http://localhost:3000/api/v1/profile`, {
+          fetch(`${url}/api/v1/profile`, {
           method: "GET",
           headers: {
           Authorization: `Bearer ${token}`,
@@ -31,7 +31,7 @@ export default function Adventures() {
 
     function deleteSummary(id) {
         
-        fetch(`http://localhost:3000/adventures/${id}`, {
+        fetch(`${url}/adventures/${id}`, {
         method: "DELETE",
         }).then((r) => {
         if (r.ok) {

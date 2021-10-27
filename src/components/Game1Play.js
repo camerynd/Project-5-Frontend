@@ -1,6 +1,8 @@
 import {useState} from 'react'
 
-export default function Game1Play({currentUser, restart}) {
+export default function Game1Play({currentUser, url, restart}) {
+
+    console.log(url)
 
     const [submittedText, setSubmittedText] = useState(false)
 
@@ -85,7 +87,7 @@ export default function Game1Play({currentUser, restart}) {
     }
 
     function handleClick() {
-        fetch(`http://localhost:3000/pets`, {
+        fetch(`${url}/pets`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

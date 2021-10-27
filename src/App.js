@@ -8,9 +8,11 @@ import LoginPage from "./components/LoginPage"
 
 function App() {
 
-  // const production  = 'https://phase-5-backend.herokuapp.com/';
-  // const development = 'http://localhost:3000/';
-  // const url = (process.env.NODE_ENV ? production : development);
+
+  const development = 'http://localhost:3000'
+  const production = 'https://phase-5-backend.herokuapp.com'
+  const url = process.env.NODE_ENV === 'production' ? production : development;
+
   
   const [loggedIn, setLoggedIn] = useState(false)
   const [user, setUser] = useState()
@@ -20,7 +22,7 @@ function App() {
   console.log("token: " + token)
   // console.log(user.user.username)
   // fetch(`${url}/api/v1/profile`, {
-    fetch(`http://localhost:3000/api/v1/profile`, {
+    fetch(`${url}/api/v1/profile`, {
     method: "GET",
     headers: {
     Authorization: `Bearer ${token}`,
@@ -40,7 +42,7 @@ function App() {
   
   function signup(username, password, bio, avatar) {
     // fetch(`${url}/api/v1/users`, {
-      fetch(`http://localhost:3000/api/v1/users`, {
+      fetch(`${url}/api/v1/users`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -70,7 +72,7 @@ function App() {
 
   function login(username, password) {
     // fetch(`${url}/api/v1/login`, {
-      fetch(`http://localhost:3000//api/v1/login`, {
+      fetch(`${url}/api/v1/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -120,13 +122,13 @@ function App() {
           <button className="logout" onClick={logout}>Logout</button>
         </nav>
             <Route exact path="/">
-              <Home update={update}/>
+              <Home url={url} update={update}/>
             </Route>
             <Route path="/play">
-              <Play currentUser={user}/>
+              <Play url={url} currentUser={user}/>
             </Route>
             <Route path="/data">
-              <YourStuff currentUser={user}/>
+              <YourStuff url={url} currentUser={user}/>
             </Route>
       </Router> :
       <LoginPage login={login} signup={signup}/>

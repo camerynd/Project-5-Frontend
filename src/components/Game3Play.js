@@ -13,7 +13,7 @@ import Fail4 from './Game3Components/Fail4'
 import Fail5 from './Game3Components/Fail5'
 import Win from './Game3Components/Win'
 
-export default function Game3Play({currentUser, restart}) {
+export default function Game3Play({currentUser, restart, url}) {
 
     const dispatch = useDispatch()
 
@@ -85,7 +85,7 @@ export default function Game3Play({currentUser, restart}) {
 
     function handleSubmit(lastWords) {
 
-        fetch(`http://localhost:3000/adventures`, {
+        fetch(`${url}/adventures`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
