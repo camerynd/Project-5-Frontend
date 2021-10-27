@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import EditForm from './EditForm'
 
-export default function Home({update}) {
+export default function Home({update, url}) {
 
     const [form, setForm] = useState(false)
     const [user, setUser] = useState('')
@@ -9,7 +9,7 @@ export default function Home({update}) {
     useEffect(() => {
         const token = localStorage.getItem("jwt");
         
-          fetch(`http://localhost:3000/api/v1/profile`, {
+          fetch(`${url}/api/v1/profile`, {
           method: "GET",
           headers: {
           Authorization: `Bearer ${token}`,
@@ -27,7 +27,7 @@ export default function Home({update}) {
 
     function handleSubmit(id, username, bio, avatar) {
 
-        fetch(`http://localhost:3000/api/v1/users/${id}`, {
+        fetch(`${url}/api/v1/users/${id}`, {
             method: "PATCH",
             headers: {
               "Content-Type": "application/json",

@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 
-export default function HighScores({currentUser}) {
+export default function HighScores({currentUser, url}) {
 
     const [highScores, setHighScores] = useState([])
     const [isHighRankingPlayer, setIsHighRankingPlayer] = useState(false)
@@ -8,7 +8,7 @@ export default function HighScores({currentUser}) {
 
     useEffect(() => {
         const token = localStorage.getItem("jwt");
-          fetch(`http://localhost:3000/api/v1/profile`, {
+          fetch(`${url}/api/v1/profile`, {
           method: "GET",
           headers: {
           Authorization: `Bearer ${token}`,
@@ -40,7 +40,7 @@ export default function HighScores({currentUser}) {
         }, []);
 
         function setData(user) {
-            fetch(`http://localhost:3000/high_scores`)
+            fetch(`${url}/high_scores`)
             .then((r) => r.json())
             .then((stuff) => {
                 setHighScores(stuff)

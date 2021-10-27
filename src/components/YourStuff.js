@@ -3,7 +3,7 @@ import Pets from "./Pets"
 import HighScores from "./HighScores"
 import Adventures from "./Adventures"
 
-export default function YourStuff({currentUser}) {
+export default function YourStuff({currentUser, url}) {
 
     return (
         <>
@@ -21,13 +21,13 @@ export default function YourStuff({currentUser}) {
                 <div className="game">
                 <Switch>
                     <Route path="/data/pets">
-                        <Pets currentUser={currentUser}/>
+                        <Pets url={url} currentUser={currentUser}/>
                     </Route>
                     <Route path="/data/high_scores">
-                        <HighScores currentUser={currentUser}/>
+                        <HighScores url={url} currentUser={currentUser}/>
                     </Route>
                     <Route path="/data/adventures">
-                        <Adventures currentUser={currentUser}/>
+                        <Adventures url={url} currentUser={currentUser}/>
                     </Route>
                 </Switch>
                 </div>
