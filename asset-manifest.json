@@ -1,22 +1,33 @@
 {
   "files": {
-    "main.css": "/Project-5-Frontend/static/css/main.8ebefa70.chunk.css",
-    "main.js": "/Project-5-Frontend/static/js/main.714e03ab.chunk.js",
-    "main.js.map": "/Project-5-Frontend/static/js/main.714e03ab.chunk.js.map",
-    "runtime-main.js": "/Project-5-Frontend/static/js/runtime-main.79666387.js",
-    "runtime-main.js.map": "/Project-5-Frontend/static/js/runtime-main.79666387.js.map",
-    "static/js/2.469dd2aa.chunk.js": "/Project-5-Frontend/static/js/2.469dd2aa.chunk.js",
-    "static/js/2.469dd2aa.chunk.js.map": "/Project-5-Frontend/static/js/2.469dd2aa.chunk.js.map",
-    "static/js/3.33ccdeec.chunk.js": "/Project-5-Frontend/static/js/3.33ccdeec.chunk.js",
-    "static/js/3.33ccdeec.chunk.js.map": "/Project-5-Frontend/static/js/3.33ccdeec.chunk.js.map",
+    "main.css": "/Project-5-Frontend/static/css/main.71fa2e29.chunk.css",
+    "main.js": "/Project-5-Frontend/static/js/main.16721509.chunk.js",
+    "main.js.map": "/Project-5-Frontend/static/js/main.16721509.chunk.js.map",
+    "runtime-main.js": "/Project-5-Frontend/static/js/runtime-main.bf0955ef.js",
+    "runtime-main.js.map": "/Project-5-Frontend/static/js/runtime-main.bf0955ef.js.map",
+    "static/js/2.5c9dc78f.chunk.js": "/Project-5-Frontend/static/js/2.5c9dc78f.chunk.js",
+    "static/js/2.5c9dc78f.chunk.js.map": "/Project-5-Frontend/static/js/2.5c9dc78f.chunk.js.map",
+    "static/js/3.b9bc7a6a.chunk.js": "/Project-5-Frontend/static/js/3.b9bc7a6a.chunk.js",
+    "static/js/3.b9bc7a6a.chunk.js.map": "/Project-5-Frontend/static/js/3.b9bc7a6a.chunk.js.map",
     "index.html": "/Project-5-Frontend/index.html",
-    "static/css/main.8ebefa70.chunk.css.map": "/Project-5-Frontend/static/css/main.8ebefa70.chunk.css.map",
-    "static/js/2.469dd2aa.chunk.js.LICENSE.txt": "/Project-5-Frontend/static/js/2.469dd2aa.chunk.js.LICENSE.txt"
+    "static/css/main.71fa2e29.chunk.css.map": "/Project-5-Frontend/static/css/main.71fa2e29.chunk.css.map",
+    "static/js/2.5c9dc78f.chunk.js.LICENSE.txt": "/Project-5-Frontend/static/js/2.5c9dc78f.chunk.js.LICENSE.txt",
+    "static/media/Choice1-image.f4bc1045.JPG": "/Project-5-Frontend/static/media/Choice1-image.f4bc1045.JPG",
+    "static/media/Choice2-image.fac65bee.JPG": "/Project-5-Frontend/static/media/Choice2-image.fac65bee.JPG",
+    "static/media/Choice3-image.28ec4073.JPG": "/Project-5-Frontend/static/media/Choice3-image.28ec4073.JPG",
+    "static/media/Choice4-image.d3e1768e.JPG": "/Project-5-Frontend/static/media/Choice4-image.d3e1768e.JPG",
+    "static/media/Choice5-image.c0c5ba8a.JPG": "/Project-5-Frontend/static/media/Choice5-image.c0c5ba8a.JPG",
+    "static/media/Fail1-image.b665c5e5.JPG": "/Project-5-Frontend/static/media/Fail1-image.b665c5e5.JPG",
+    "static/media/Fail2-image.fe16071d.JPG": "/Project-5-Frontend/static/media/Fail2-image.fe16071d.JPG",
+    "static/media/Fail3-image.e4a30658.JPG": "/Project-5-Frontend/static/media/Fail3-image.e4a30658.JPG",
+    "static/media/Fail4-image.45157875.JPG": "/Project-5-Frontend/static/media/Fail4-image.45157875.JPG",
+    "static/media/Fail5-image.1bd2884a.JPG": "/Project-5-Frontend/static/media/Fail5-image.1bd2884a.JPG",
+    "static/media/Win-image.e54f7fec.JPG": "/Project-5-Frontend/static/media/Win-image.e54f7fec.JPG"
   },
   "entrypoints": [
-    "static/js/runtime-main.79666387.js",
-    "static/js/2.469dd2aa.chunk.js",
-    "static/css/main.8ebefa70.chunk.css",
-    "static/js/main.714e03ab.chunk.js"
+    "static/js/runtime-main.bf0955ef.js",
+    "static/js/2.5c9dc78f.chunk.js",
+    "static/css/main.71fa2e29.chunk.css",
+    "static/js/main.16721509.chunk.js"
   ]
 }
