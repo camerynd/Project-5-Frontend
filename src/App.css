@@ -41,7 +41,7 @@ body {
   box-shadow: 1px 1px 2px rgb(187, 63, 115), 0 0 1em rgb(255, 4, 150), 0 0 0.2em rgb(143, 0, 19);
   padding: 5px;
   width: 100px;
-  margin: auto;
+  margin: 50px
 }
 
 .navbar {
@@ -116,7 +116,7 @@ body {
   right: 0px;
   top: 0px;
   position: absolute;
-  height: 102.5vh;
+  height: 115.5vh;
 }
 
 .container2 {
@@ -131,7 +131,7 @@ body {
   right: 0px;
   top: 0px;
   position: absolute;
-  height: 102.5vh;
+  height: 115.5vh;
 }
 
 .arcade {
@@ -161,7 +161,7 @@ body {
   right: 0px;
   top: 0px;
   position: absolute;
-  height: 102.5vh;
+  height: 115.5vh;
 }
 
 /* .link-div1 {
@@ -202,7 +202,6 @@ body {
 
 
 .game {
-  
   overflow: auto;
   padding: 30px;
   height: 600px;
@@ -245,7 +244,7 @@ body {
   background-image : url("http://www.pixelstalk.net/wp-content/uploads/2016/07/8-Bit-Images-HD.png");
   display: flex;
   flex-direction: column;
-  height: 105vh;
+  height: 118vh;
   width: 14.2%;
   /* padding-top: 50px; */
 }
@@ -537,7 +536,7 @@ input {
   background-color: red;
   position: relative;
   top: 150px;
-  left: 100px;
+  left: 100px;;
 }
 
 .block1 {
@@ -547,7 +546,6 @@ input {
   position: relative;
   top: 130px;
   left: 480px;
-  animation: block 1s infinite;
 }
 
 .block2 {
@@ -557,11 +555,18 @@ input {
   position: relative;
   top: 110px;
   left: 480px;
-  animation: block 3s infinite;
 }
 
 .animate {
   animation: jump 500ms;
+}
+
+.move1 {
+  animation: block 1s infinite;
+}
+
+.move2 {
+  animation: block 3s infinite;
 }
 
 @keyframes block {
@@ -571,7 +576,11 @@ input {
 
 @keyframes jump {
   0%{top:150px;}
-  30%{top: 100px;}
-  70%{top: 100px;}
-  100%{top: 150px;}
+  30%{top:120px;}
+  70%{top:120px;}
+  100%{top:150px;}
+}
+
+.score {
+  margin: 50px;
 }

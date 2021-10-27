@@ -104,6 +104,10 @@ function App() {
     setLoggedIn(false)
   }
 
+  function update(updatedUser) {
+    setUser(updatedUser)
+  }
+
   return (
     <div className="App">
       {loggedIn ?
@@ -116,7 +120,7 @@ function App() {
           <button className="logout" onClick={logout}>Logout</button>
         </nav>
             <Route exact path="/">
-              <Home currentUser={user}/>
+              <Home update={update}/>
             </Route>
             <Route path="/play">
               <Play currentUser={user}/>
