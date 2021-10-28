@@ -34,10 +34,12 @@ export default function Game2({setTheme, currentUser, url}) {
     setLossMessage(false)
   }
 
-  
-  function submitScore() {
+  function endGame() {
     setGameActive(false)
     setLossMessage(true)
+  }
+  
+  function submitScore() {
 
       fetch(`${url}/scores`, {
           method: "POST",
@@ -67,12 +69,12 @@ export default function Game2({setTheme, currentUser, url}) {
 
     return (
         <>
-        <h1>Game 2</h1>
+        <h1>Block Jump</h1>
         <p>Click inside the game screen to jump, don't let the moving blocks touch you!</p>
         <button onClick={handleClick}>Start/Stop</button>
         {gameActive ?
         <> 
-        <Game2Play submitScore={submitScore} addPoint={addPoint} /> 
+        <Game2Play endGame={endGame} submitScore={submitScore} addPoint={addPoint} /> 
         {lossMessage ? <h1 className="lose">Game Over</h1> : ''}
         <Score score={score}/>
         </>

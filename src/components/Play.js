@@ -32,7 +32,7 @@ export default function Play({currentUser, url}) {
                     <Link className="links2" to="/play/game1">Special Pet</Link>
                 </div>
                 <div className="link-div">
-                    <Link className="links2" to="/play/game2">Game 2</Link>
+                    <Link className="links2" to="/play/game2">Block Jump</Link>
                 </div>
                 <div className="link-div">
                     <Link className="links2" to="/play/game3">Epic Quest</Link>

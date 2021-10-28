@@ -1,7 +1,7 @@
 import {useState, useRef, useEffect} from 'react'
 
 
-export default function Game2Play({addPoint, submitScore}) {
+export default function Game2Play({addPoint, submitScore, endGame}) {
 
     useEffect(() => {
         setTop(characterRef.current.getBoundingClientRect().top - 20)
@@ -77,6 +77,7 @@ export default function Game2Play({addPoint, submitScore}) {
                     // setLoser(true)
                     console.log("u lose")
                     submitScore()
+                    endGame()
                     // setBlock1Class("block1")
                     // setBlock2Class("block2")
                     // setActivePlay(false)

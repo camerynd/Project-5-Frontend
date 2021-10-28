@@ -13,7 +13,7 @@ export default function YourStuff({currentUser, url}) {
                     <Link className="links2" to="/data/pets">Your Pets</Link>
                 </div>
                 <div className="link-div">
-                    <Link className="links2" to="/data/high_scores">Number Cruncher High Scores</Link>
+                    <Link className="links2" to="/data/high_scores">Block Jump High Scores</Link>
                 </div>
                 <div className="link-div">
                     <Link className="links2" to="/data/adventures">Saved Adventures</Link>
