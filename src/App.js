@@ -112,7 +112,7 @@ function App() {
 
   return (
     <div className="App">
-      {loggedIn ?
+      {user ?
       <Router>
         <nav className="navbar-container">
           {user ? <img src={user.avatar} alt="you"/> : ''}
